@@ -31,11 +31,11 @@ public class IndexControllerTest {
 
             MvcResult result= this.mockMvc.perform(get("/"))
                       .andExpect(view().name("index"))
-                 //   .andExpect(content().string(Matchers.containsString("Hello")))
+                      /*COntent of Thymeleaf view is an empty not null string. Need to test content that the index view returns*/
+                 //   .andExpect(content().string(Matchers.containsString("Spring Boot Web App")))
                     .andReturn();
             String content = result.getResponse().getContentAsString();
             assertNotNull(content);
             System.out.println("Content: "+content);
-            //assertEquals("Hello", content);
         }
   }
